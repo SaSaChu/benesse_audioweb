@@ -1,0 +1,443 @@
+//
+// @author      OA Wu <comdan66@gmail.com>
+// @copyright   Copyright (c) 2015 - 2019, Ginkgo
+// @license     http://opensource.org/licenses/MIT  MIT License
+// @link        https://www.ioa.tw/
+//
+
+@import "Ginkgo";
+
+body {
+  position: relative;
+
+  display: inline-block;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+  color: #3F3F3F;
+
+  font-size: 12px;
+  text-align: center;
+  font-family: "微軟正黑體", "Open sans", "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  
+  // 文字染色，背景色、文字色
+  @include selection(rgba(120, 186, 255, 1.00), rgba(255, 255, 255, 1));
+}
+
+.big_box {
+  display: inline-block;
+  width: 100%;
+
+  @include range-width(0, 1045px) {
+    padding: 0 20px;
+  }
+
+  .app_boxs {
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    @include border-radius(35px);
+    overflow: hidden;
+
+    .app_title {
+      display: inline-block;
+      width: 100%;
+      height: 80px;
+      line-height: 75px;
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+
+      @include range-width(450px, 610px) {
+        font-size: 2.5rem;
+      }
+
+      @include range-width(0,450px) {
+        font-size: 1.6rem;
+      }
+
+      &.b_bg {
+        background-image: url(../img/app01_bg.png);
+        background-repeat: no-repeat;
+      }
+
+      &.p_bg {
+        background-image: url(../img/app02_bg.png);
+        background-repeat: no-repeat;
+      }
+    }
+
+    .app_box {
+      display: inline-block;
+      width: 100%;
+      padding: 30px;
+      @include clearfix();
+
+      .app_left, .app_right {
+        display: inline-block;
+        float: left;
+        text-align: left;
+        padding-right: 20px;
+
+        @include range-width(0, 845px) {
+          padding-right: 0;
+        }
+      }
+
+      .app_left {
+        width: 30%;
+
+        @include range-width(0, 845px) {
+          width: 100%;
+          float: none !important;
+          text-align: center;
+        }
+
+        img {
+          display: inline-block;
+          width: 100%;
+          max-width: 235px;
+        }
+      }
+
+      .app_right {
+        width: 70%;
+
+        @include range-width(0, 845px) {
+          width: 100%;
+          float: none !important;
+          text-align: center;
+        }
+      }
+
+      .app_2link {
+        display: inline-block;
+
+        @include range-width(0, 630px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .cent_boxs {
+    display: inline-block;
+    width: 100%;
+    max-width: 800px;
+    @include clearfix();
+    
+    .cent_title {
+      display: inline-block;
+      width: 100%;
+      padding: 10px 0;
+      color: white;
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+      position: relative;
+      margin-bottom: 50px;
+
+      @include range-width(0, 610px) {
+        font-size: 2.5rem;
+      }
+
+      @include range-width(0,450px) {
+        font-size: 1.6rem;
+      }
+
+      .L_arrow {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 42px 0 42px 50px;
+        border-color: transparent transparent transparent #ffffff;
+
+        @include range-width(450px, 610px) {
+          border-width: 42px 0 42px 30px;
+        }
+
+        @include range-width(0, 450px) {
+          border-width: 31px 0 31px 20px;
+        }
+      }
+
+      .R_arrow {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 42px 50px 42px 0;
+        border-color: transparent #ffffff transparent transparent;
+
+        @include range-width(450px, 610px) {
+          border-width: 42px 30px 42px 0;
+        }
+
+        @include range-width(0, 450px) {
+          border-width: 31px 20px 31px 0;
+        }
+      }
+    }
+
+    .cent_box {
+      display: inline-block;
+      width: 45%;
+
+      @include range-width(0, 450px) {
+        width: 100%;
+      }
+
+      .pic_box {
+        display: inline-block;
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        border: 5px solid #D75B11;
+        @include border-radius(25px);
+        
+
+        img {
+          display: inline-block;
+          width: 100%;
+          max-width: 337px;
+        }
+      }
+
+      &.so3_boxs {
+        width: calc(100% / 3);
+
+        @include range-width(0,450px) {
+          width: 100%;
+        }
+
+        img {
+          display: inline-block;
+          width: 100%;
+          max-width: 150px;
+        }
+      }
+    }
+  }
+}
+
+
+// 分隔線
+.cent_boder {
+  display: inline-block;
+  width: 100%;
+  border-top: 6px dotted #E3E3E3;
+  margin: 50px 0;
+}
+
+
+
+// 空間配置
+.ma_top120 {
+  margin-top: 120px;
+}
+.ma_top50 {
+  margin-top: 50px;
+}
+.ma_bottom50 {
+  margin-bottom: 50px;
+}
+
+
+
+// app外框
+.blue_line {
+  border: 10px solid #02A5E3;
+}
+.pink_line {
+  border: 10px solid #D86969;
+}
+
+
+
+p {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+// 字體大小
+.fs40 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+.note {
+  font-size: 1.4rem;
+  padding-top: 20px;
+}
+.cent_name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.app_text {
+  display: inline-block;
+  border-top: 3px dotted #E3E3E3;
+  border-bottom: 3px dotted #E3E3E3;
+  padding: 20px 0;
+  font-size: 1.4rem;
+  margin-top: 20px;
+
+  @include range-width(0, 845px) {
+    text-align: center !important;
+  }
+}
+
+
+
+// 顏色
+.fc_o {
+  color: #E36E02;
+}
+.fc_b {
+  color: #2AC0D1;
+}
+.cc_br {
+  background-color: rgba(190, 120, 34, 1.00);
+}
+.cc_by {
+  background-color: rgba(215, 168, 17, 1.00);
+}
+.cc_oo {
+  color: #D75B11;
+}
+
+
+
+// 按鈕連結
+button, a {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  margin: 20px 0;
+
+  &.no_spac {
+    display: none;
+
+    @include range-width(0, 635px) {
+      display: inline-block;
+      margin: 10px 0 0 0;
+    }
+  }
+
+  &.b_link {
+    @include border-radius(50px);
+    color: white;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+
+    @include range-width(0, 630px) {
+      float: none;
+      text-align: center;
+    }
+
+    &.b_mo {
+      &:before {
+        display: inline-block;
+        content: '\e901';
+        font-family: 'icomoon';
+        color: white;
+        font-size: 1.7rem;
+        margin-right: 10px; 
+      }
+    }
+  }
+
+  &.s_link {
+    @include border-radius(50px);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+
+    @include range-width(0, 630px) {
+      font-size: 1rem;
+    }
+
+    &.so_mo {
+      &:before {
+        display: inline-block;
+        content: '\e902';
+        font-family: 'icomoon';
+        color: white;
+        font-size: 1rem;
+        margin-right: 10px; 
+        padding-top: 5px;
+      }
+    }
+  }
+
+  img {
+    display: inline-block;
+    width: 100%;
+    max-width: 143px;
+  }
+}
+.btn_o {
+  background-color: #E36E02;
+  @include transition(all .3s);
+
+  &:hover, &:active {
+    background-color: rgba(227, 110, 2, .9);
+  }
+}
+.btn_b {
+  background-color: #2AC0D1;
+  @include transition(all .3s);
+
+  &:hover, &:active {
+    background-color: rgba(42, 192, 209, .9);
+  }
+}
+.btn_fb {
+  background-color: rgba(69, 102, 164, 1.00);
+  @include transition(all .3s);
+
+  &:hover, &:active {
+    background-color: rgba(69, 102, 164, .9);
+  }
+}
+.btn_line {
+  background-color: rgba(3, 176, 1, 1.00);
+  @include transition(all .3s);
+
+  &:hover, &:active {
+    background-color: rgba(3, 176, 1, .9);
+  }
+}
+.btn_u2 {
+  background-color: rgba(255, 0, 1, 1.00);
+  @include transition(all .3s);
+
+  &:hover, &:active {
+    background-color: rgba(255, 0, 1, .9);
+  }
+}
+
+
+
+// 左右方向
+.fl_l {
+  float: left;
+}
+.fl_r {
+  float: right;
+}
+
+
+
+
+
+
