@@ -74,6 +74,10 @@ body {
       padding: 30px;
       @include clearfix();
 
+      @include range-width(0, 450px) {
+        padding: 20px;
+      }
+
       .app_left, .app_right {
         display: inline-block;
         float: left;
@@ -92,6 +96,7 @@ body {
           width: 100%;
           float: none !important;
           text-align: center;
+          margin-top: 20px;
         }
 
         img {
@@ -144,6 +149,7 @@ body {
 
       @include range-width(0,450px) {
         font-size: 1.6rem;
+        margin-bottom: 0;
       }
 
       .L_arrow {
@@ -202,6 +208,10 @@ body {
         margin-top: 20px;
         border: 5px solid #D75B11;
         @include border-radius(25px);
+
+        @include range-width(0, 450px) {
+          margin-top: 15px;
+        }
         
 
         img {
@@ -214,8 +224,9 @@ body {
       &.so3_boxs {
         width: calc(100% / 3);
 
-        @include range-width(0,450px) {
+        @include range-width(0, 600px) {
           width: 100%;
+          margin-top: 20px;
         }
 
         img {
@@ -249,6 +260,18 @@ body {
 .ma_bottom50 {
   margin-bottom: 50px;
 }
+.mr20 {
+  margin-left: 20px;
+
+  @include range-width(0, 450px) {
+    margin: 0;
+  }
+}
+.mb20 {
+  @include range-width(0, 450px) {
+    margin: 0 0 20px 0;
+  }
+}
 
 
 
@@ -271,30 +294,47 @@ p {
 .fs40 {
   font-size: 2.8rem;
   font-weight: bold;
+
+  @include range-width(0, 450px) {
+    font-size: 2rem;
+    padding-top: 20px;
+  }
 }
 .note {
   font-size: 1.4rem;
   padding-top: 20px;
+
+  @include range-width(0, 450px) {
+    font-size: 1rem;
+    line-height: 24px;
+  }
 }
 .cent_name {
   font-size: 2rem;
   font-weight: bold;
-}
 
-
-.app_text {
-  display: inline-block;
-  border-top: 3px dotted #E3E3E3;
-  border-bottom: 3px dotted #E3E3E3;
-  padding: 20px 0;
-  font-size: 1.4rem;
-  margin-top: 20px;
-
-  @include range-width(0, 845px) {
-    text-align: center !important;
+  @include range-width(0, 450px) {
+    font-size: 1.6rem;
+    padding-top: 20px;
   }
 }
 
+.type_box {
+  display: inline-block;
+
+  @include range-width(0, 845px) {
+    text-align: left !important;
+  }
+
+  .app_text {
+    display: inline-block;
+    border-top: 3px dotted #E3E3E3;
+    border-bottom: 3px dotted #E3E3E3;
+    padding: 20px 0;
+    font-size: 1.4rem;
+    margin-top: 20px;
+  }
+}
 
 
 // 顏色
@@ -348,7 +388,7 @@ button, a {
       &:before {
         display: inline-block;
         content: '\e901';
-        font-family: 'icomoon';
+        font-family: 'icon';
         color: white;
         font-size: 1.7rem;
         margin-right: 10px; 
@@ -370,7 +410,7 @@ button, a {
       &:before {
         display: inline-block;
         content: '\e902';
-        font-family: 'icomoon';
+        font-family: 'icon';
         color: white;
         font-size: 1rem;
         margin-right: 10px; 
@@ -423,6 +463,12 @@ button, a {
 
   &:hover, &:active {
     background-color: rgba(255, 0, 1, .9);
+  }
+}
+.link_box {
+  display: inline-block;
+  @include range-width(0, 600px) {
+    width: 100%;
   }
 }
 
